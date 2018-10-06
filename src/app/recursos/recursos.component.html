@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id Solicitud</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">Tipo Recurso</th>
+      <th scope="col">Id proyecto</th>
+      <th scope="col">Descripción solicitud</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rec of recursos">
+      <th scope="row">{{rec.idSolicitud}}</th>
+      <td>{{rec.nombre}}</td>
+      <td>{{rec.descripcion}}</td>
+      <td>{{rec.tipoRecurso}}</td>
+      <td>{{rec.idProyecto}}</td>
+      <td>{{rec.descripcionSolicitud}}</td>
+    </tr>
+  </tbody>
+</table>
