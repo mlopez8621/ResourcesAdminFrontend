@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ResourcesAdminFronted": {
+    "resources": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ResourcesAdminFronted",
+            "outputPath": "dist/resources",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -56,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ResourcesAdminFronted:build"
+            "browserTarget": "resources:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ResourcesAdminFronted:build:production"
+              "browserTarget": "resources:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ResourcesAdminFronted:build"
+            "browserTarget": "resources:build"
           }
         },
         "test": {
@@ -101,7 +101,7 @@
         }
       }
     },
-    "ResourcesAdminFronted-e2e": {
+    "resources-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -109,11 +109,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ResourcesAdminFronted:serve"
+            "devServerTarget": "resources:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ResourcesAdminFronted:serve:production"
+              "devServerTarget": "resources:serve:production"
             }
           }
         },
@@ -129,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "ResourcesAdminFronted"
+  "defaultProject": "resources"
 }
