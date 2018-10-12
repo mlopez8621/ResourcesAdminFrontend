@@ -13,7 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReasignacionComponent } from './reasignacion/reasignacion.component';
-import {ReasignacionService} from "./reasignacion/reasignacion.services";
+import { ReasignacionService} from "./reasignacion/reasignacion.services";
+import { ResponsablemComponent } from './responsablem/responsablem.component';
+import { ResponsablemService} from "./responsablem/responsablem.services";
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import {ReasignacionService} from "./reasignacion/reasignacion.services";
     LandingComponent,
     FasesComponent,
     RecursosComponent,
-    ReasignacionComponent
+    ReasignacionComponent,
+    ResponsablemComponent
+
   ],
   exports: [RecursosComponent],
   imports: [
@@ -31,7 +35,7 @@ import {ReasignacionService} from "./reasignacion/reasignacion.services";
     CommonModule,
     FormsModule
   ],
-  providers: [FasesService,RecursosServicio,ReasignacionService],
+  providers: [FasesService,RecursosServicio,ReasignacionService,ResponsablemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
