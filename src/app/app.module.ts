@@ -12,13 +12,16 @@ import { RecursosComponent } from './recursos/recursos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReasignacionComponent } from './reasignacion/reasignacion.component';
+import {ReasignacionService} from "./reasignacion/reasignacion.services";
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     LandingComponent,
     FasesComponent,
-    RecursosComponent
+    RecursosComponent,
+    ReasignacionComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -28,7 +31,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule
   ],
-  providers: [FasesService,RecursosServicio],
+  providers: [FasesService,RecursosServicio,ReasignacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
