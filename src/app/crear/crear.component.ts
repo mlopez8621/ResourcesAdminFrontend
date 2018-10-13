@@ -12,7 +12,7 @@ import { CrearService } from '../core/services/crear.service';
 })
 export class CrearComponent implements OnInit {
   crearform: FormGroup;
-  private _lists: any  = [];
+  public _lists: any  = [];
   CrearData: CrearModel = null;
   constructor(
      private frmBuilder: FormBuilder ,
