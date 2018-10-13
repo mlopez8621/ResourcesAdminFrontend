@@ -1,24 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { FasesComponent } from './fases/fases.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
-import { FasesService } from './fases/fases.service';
-import { RecursosServicio } from './recursos/recursos.service';
 import { RecursosComponent } from './recursos/recursos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CrearComponent } from './crear/crear.component';
+import { ErrorComponent } from './error/error.component';
+import { CoreModule } from './core/core.module';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     LandingComponent,
     FasesComponent,
-    RecursosComponent
+    RecursosComponent,
+    CrearComponent,
+    ErrorComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -26,9 +29,11 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    CoreModule.forRoot(),
   ],
-  providers: [FasesService,RecursosServicio],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { RecursosServicio } from './recursos.service';
+
 import { Recursos } from './recursos';
 
 import swal from 'sweetalert2';
+import { RecursosServicio } from '../core/services/recursos.service';
 
 @Component({
   selector: 'app-recursos',
@@ -11,25 +12,26 @@ import swal from 'sweetalert2';
 })
 
 
-export class RecursosComponent implements OnInit,OnChanges {
+export class RecursosComponent implements OnInit, OnChanges {
 recursos: Recursos[];
-@Input() estado:any;
+@Input() estado: any;
 
-  constructor(private recursosService:RecursosServicio) { }
+  constructor(private recursosService: RecursosServicio) { }
 
   ngOnInit() {
-   
+
   }
 
-  ngOnChanges(){
+  ngOnChanges() {
 
     this.getListRecursos();
   }
-  
-  getListRecursos():void{
+
+  getListRecursos(): void {
     swal.showLoading();
-    this.recursosService.getResourcesFiltered(this.estado).subscribe((recursos:any) =>{ this.recursos = recursos.results;
-      swal.hideLoading();});
+    this.recursosService.getResourcesFiltered(this.estado)
+    .subscribe((recursos: any) => { this.recursos = recursos.results;
+      swal.hideLoading(); });
   }
 
 }

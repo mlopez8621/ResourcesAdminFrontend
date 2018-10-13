@@ -1,0 +1,58 @@
+<form novalidate  [formGroup]='crearform' (ngSubmit)='crear()'>
+  <div class="form-group">
+  
+    <label >Nombre</label>
+    <input type="text" class="form-control"   placeholder="Ingrese Nombre" formControlName='nombre' >
+    <app-error [control]="crearform.controls.nombre"> </app-error>  
+  
+  </div>
+
+  
+  <div class="form-group">
+      <label >descripcion</label>
+      <input type="text" class="form-control"   placeholder="Ingrese descripcion" formControlName='descripcion' >
+      <app-error [control]="crearform.controls.descripcion">   </app-error>  
+    </div>
+    
+  <div class="form-group">
+      <div class="form-group">
+          <label >Tipo Recurso</label>
+          <select  formControlName='tipoRecurso' class="form-control">
+            <option value="">--SELECCIONE EL CAMPO CORRESPONDIENTE--</option>
+            <option *ngFor="let recursoItem of _lists.Recursos " value= {{recursoItem.id}}>{{recursoItem.nombre}} </option>
+             </select>
+          <app-error [control]="crearform.controls.tipoRecurso">   </app-error> 
+        </div>
+  </div>
+  <div class="form-group">
+    <label >Id Solicitud</label>
+    <input type="text" class="form-control"   placeholder="Ingrese id de la Solicitud" formControlName='idSolicitud' >
+    <app-error [control]="crearform.controls.idSolicitud">   </app-error>  
+  </div>
+
+  <div class="form-group">
+    <label>Id Proyecto</label>
+    <input type="text" class="form-control"   placeholder="Ingrese id del Proyecto" formControlName='idProyecto' >
+    <app-error [control]="crearform.controls.idProyecto">   </app-error>  
+  </div>
+  <div class="form-group">
+    <label >descripcion Solicitud</label>
+    <input type="text" class="form-control"   placeholder="Ingrese descripcion" formControlName='descripcionSolicitud' >
+    <app-error [control]="crearform.controls.descripcionSolicitud">   </app-error>  
+  </div>
+
+  
+  <div class="form-group">
+      <div class="form-group">
+          <label >Estado</label>
+          <select  formControlName='estado' class="form-control">
+            <option value="">--SELECCIONE EL CAMPO CORRESPONDIENTE--</option>
+            <option *ngFor="let estadosItem of _lists.Estados " value= {{estadosItem.id}}>{{estadosItem.nombre}} </option>
+             </select>
+          <app-error [control]="crearform.controls.estado">   </app-error> 
+        </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
