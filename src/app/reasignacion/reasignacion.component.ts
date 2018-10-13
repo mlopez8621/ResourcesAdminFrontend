@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ReasignacionService } from "./reasignacion.services";
 import { Reasignacion } from "./reasignacion";
+import { ResponsablemService } from "../responsablem/responsablem.services";
+import { Responsablem } from "../responsablem/responsablem";
 
 
 @Component({
@@ -10,11 +12,13 @@ import { Reasignacion } from "./reasignacion";
 })
 export class ReasignacionComponent implements OnInit {
 
-  constructor(private reasignacionService: ReasignacionService) { }
+  constructor(private reasignacionService: ReasignacionService,private responsablemService: ResponsablemService) { }
   reasignacion: Reasignacion[];
+  responsablem: Responsablem[];
   selected : any;
   ngOnInit() {
     this.getListReasignacion();
+    this.getListResponsablem();
   }
 
   getResources():void{
@@ -24,6 +28,10 @@ export class ReasignacionComponent implements OnInit {
 
   getListReasignacion():void{
     this.reasignacionService.getAllPhases().subscribe((reasignacion:any) => this.reasignacion = reasignacion.results);
+  }
+
+  getListResponsablem():void{
+    this.responsablemService.getAllPhases().subscribe((responsablem:any) => this.responsablem = responsablem.results);
   }
 }
 
