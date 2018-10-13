@@ -58,8 +58,8 @@ export class CrearComponent implements OnInit {
          respon => {
           console.log(respon); // validar la respuesta
           swal(
-            'Good job!',
-            'Respueesta Exitosa',
+            'OK!',
+            'Creado Exitosamente',
             'success'
           );
        },
