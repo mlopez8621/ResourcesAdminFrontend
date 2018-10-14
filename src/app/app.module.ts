@@ -17,6 +17,7 @@ import { ResponsableService} from "./responsable/responsable.services";
 import { CrearComponent } from './crear/crear.component';
 import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
+import { FasesService } from './fases/fases.service';
 
 @NgModule({
   declarations: [
