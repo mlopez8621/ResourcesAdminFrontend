@@ -1,18 +1,18 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Responsablem } from "./responsablem";
+import { Responsable } from "./responsable";
 import { HttpClient } from '@angular/common/http';
 import { environment } from "../../environments/environment";
 
 const URL = environment.url;
-const RESPONSABLEM = "responsable";
+const RESPONSABLE = "responsable";
 
 @Injectable()
-export class ResponsablemService{
+export class ResponsableService{
 
     constructor(private http:HttpClient){}
 
-    getAllPhases():Observable<Responsablem[]>{
-        return this.http.get<Responsablem[]>(URL+RESPONSABLEM);
+    getAllPhases():Observable<Responsable[]>{
+        return this.http.get<Responsable[]>(URL+RESPONSABLE);
     }
 }

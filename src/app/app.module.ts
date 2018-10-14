@@ -14,8 +14,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReasignacionComponent } from './reasignacion/reasignacion.component';
 import { ReasignacionService} from "./reasignacion/reasignacion.services";
-import { ResponsablemComponent } from './responsablem/responsablem.component';
-import { ResponsablemService} from "./responsablem/responsablem.services";
+import { ResponsableComponent } from './responsable/responsable.component';
+import { ResponsableService} from "./responsable/responsable.services";
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,7 @@ import { ResponsablemService} from "./responsablem/responsablem.services";
     FasesComponent,
     RecursosComponent,
     ReasignacionComponent,
-    ResponsablemComponent
+    ResponsableComponent
 
   ],
   exports: [RecursosComponent],
@@ -35,7 +35,7 @@ import { ResponsablemService} from "./responsablem/responsablem.services";
     CommonModule,
     FormsModule
   ],
-  providers: [FasesService,RecursosServicio,ReasignacionService,ResponsablemService],
+  providers: [FasesService,RecursosServicio,ReasignacionService,ResponsableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

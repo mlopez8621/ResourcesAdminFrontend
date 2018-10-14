@@ -1,4 +1,4 @@
-export class Responsablem{
+export class Responsable{
     id : number;
     nombres : string;
     apellidos : string;
