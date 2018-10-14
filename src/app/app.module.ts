@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { CrearComponent } from './crear/crear.component';
 import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
+import { ReasignacionComponent } from './reasignacion/reasignacion.component';
+import { ReasignacionService} from "./reasignacion/reasignacion.services";
+import { ResponsableComponent } from './responsable/responsable.component';
+import { ResponsableService} from "./responsable/responsable.services";
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,9 @@ import { CoreModule } from './core/core.module';
     FasesComponent,
     RecursosComponent,
     CrearComponent,
-    ErrorComponent
+    ErrorComponent,
+    ReasignacionComponent,
+    ResponsableComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -33,7 +39,7 @@ import { CoreModule } from './core/core.module';
     ReactiveFormsModule,
     CoreModule.forRoot(),
   ],
-  providers: [],
+  providers: [FasesService,RecursosServicio,ReasignacionService,ResponsableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
