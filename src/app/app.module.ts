@@ -19,6 +19,7 @@ import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
 import { FasesService } from './fases/fases.service';
 import { RecursosServicio } from './recursos/recursos.service';
+import { SelectListComponent } from './select-list/select-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RecursosServicio } from './recursos/recursos.service';
     ReasignacionComponent,
     ResponsableComponent,
     CrearComponent,
-    ErrorComponent
+    ErrorComponent,
+    SelectListComponent
   ],
   exports: [RecursosComponent],
   imports: [

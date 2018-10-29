@@ -22,28 +22,28 @@ export class ReasignacionComponent implements OnInit {
 
   constructor(private reasignacionService: ReasignacionService,private responsableService: ResponsableService) { }
   reasignacion: Reasignacion[];
-  responsable: Responsable[];
   private _reasignacionService: ReasignacionService
   selected : any;
   ngOnInit() {
     this.getListReasignacion();
-    this.getListResponsable();
   }
 
   getResources():void{
       alert(this.selected)
   }
+  showResponsable(event,item:any):void{
+    item.idNuevoResponsable=event;
+    alert(item);
+}
 
 
   getListReasignacion():void{
     this.reasignacionService.getAllPhases().subscribe((reasignacion:any) => this.reasignacion = reasignacion.results);
   }
 
-  getListResponsable():void{
-    this.responsableService.getAllPhases().subscribe((responsable:any) => this.responsable = responsable.results);
-  }
-
-  reasignar(): void {
+  reasignar(rasig): void {
+    debugger; // Aqui ya llega el nuevo responsable en un campo nuevo que se llama idNuevoResponsable en rasig, ya es hacer la actualizacion
+    console.log(rasig)
     if ( this.reasignarform.invalid) {
       return;
     }
