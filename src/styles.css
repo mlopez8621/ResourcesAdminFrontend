@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+.flex-fill {
+   flex: 1 1 auto;
+} 
+/* body, html {
+    height: 100%;
+} */
+
+body{
+    min-height: 100vh;
+    background-image: url("./assets/images/background/home.jpg");
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-item {
+    height: 85vh;
+    min-height: 200px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+
+
+
+  /*  cards  animations*/ 
+.faintcards{
+    animation: fadeIncards 1s ease-in both;
+}
+
+
+  @keyframes fadeIncards {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -10%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
