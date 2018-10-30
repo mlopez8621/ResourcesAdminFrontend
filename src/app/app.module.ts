@@ -15,8 +15,13 @@ import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
 import { ReasignacionComponent } from './reasignacion/reasignacion.component';
 import { ReasignacionService} from "./reasignacion/reasignacion.services";
+import { FasesService} from "./fases/fases.service";
+import { RecursosServicio} from "./recursos/recursos.service";
+
 import { ResponsableComponent } from './responsable/responsable.component';
 import { ResponsableService} from "./responsable/responsable.services";
+import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +32,8 @@ import { ResponsableService} from "./responsable/responsable.services";
     CrearComponent,
     ErrorComponent,
     ReasignacionComponent,
-    ResponsableComponent
+    ResponsableComponent,
+    ListaRecursosComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -38,6 +44,7 @@ import { ResponsableService} from "./responsable/responsable.services";
     FormsModule,
     ReactiveFormsModule,
     CoreModule.forRoot(),
+    AccordionModule.forRoot(),
   ],
   providers: [FasesService,RecursosServicio,ReasignacionService,ResponsableService],
   bootstrap: [AppComponent]
