@@ -1,30 +1,30 @@
 
   <div class="row">
-        <div class="col-6 col-md-4" *ngFor="let rec of recursos">
+    <div class="col-6 col-md-4 faintcards" *ngFor="let rec of recursos">
 
-     <div class="image-flip" >
-          <div class="mainflip">
-                  <div class="frontside">
+ <div class="image-flip" >
+      <div class="mainflip">
+              <div class="frontside">
+                    <div class="card">
+                      <span class="h6  mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">{{rec.nombre}}</span>
+                         <div class="card-body text-center">
+                              <p class="card-text "><strong> Id Proyecto : </strong> {{rec.idProyecto}}</p> 
+                              <p class="card-text "><strong> Id Solicitud : </strong> {{rec.idSolicitud}}</p> 
+                              <p class="card-text "><strong> Descripcion : </strong> {{rec.descripcion}}</p> 
+                               
+                              <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                         </div>
+                  </div>
+                </div>
+                   <div class="backside">
                         <div class="card">
-                          <span class="h6  mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">{{rec.nombre}}</span>
-                             <div class="card-body text-center">
-                                  <p class="card-text "><strong> Id Proyecto : </strong> {{rec.idProyecto}}</p> 
-                                  <p class="card-text "><strong> Id Solicitud : </strong> {{rec.idSolicitud}}</p> 
-                                  <p class="card-text "><strong> Descripcion : </strong> {{rec.descripcion}}</p> 
-                                   
-                                  <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                             </div>
-                      </div>
-                    </div>
-                       <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Descripción Solicitud</h4>
-                                    <p class="card-text"> {{rec.descripcionSolicitud}}  </p>
-                                </div>
+                            <div class="card-body text-center mt-4">
+                                <h4 class="card-title">Descripción Solicitud</h4>
+                                <p class="card-text"> {{rec.descripcionSolicitud}}  </p>
                             </div>
                         </div>
                     </div>
                 </div>
-         </div>
-    </div>
+            </div>
+     </div>
+</div>
