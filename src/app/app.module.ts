@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CrearComponent } from './crear/crear.component';
 import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
+import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { CoreModule } from './core/core.module';
     FasesComponent,
     RecursosComponent,
     CrearComponent,
-    ErrorComponent
+    ErrorComponent,
+    GestioncalidadComponent
   ],
   exports: [RecursosComponent],
   imports: [
