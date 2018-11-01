@@ -14,6 +14,15 @@ import { RecursosComponent } from './recursos/recursos.component';
 import { CrearComponent } from './crear/crear.component';
 import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
+import { ReasignacionComponent } from './reasignacion/reasignacion.component';
+import { ReasignacionService} from "./reasignacion/reasignacion.services";
+import { FasesService} from "./fases/fases.service";
+import { RecursosServicio} from "./recursos/recursos.service";
+
+import { ResponsableComponent } from './responsable/responsable.component';
+import { ResponsableService} from "./responsable/responsable.services";
+import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +31,10 @@ import { CoreModule } from './core/core.module';
     FasesComponent,
     RecursosComponent,
     CrearComponent,
-    ErrorComponent
+    ErrorComponent,
+    ReasignacionComponent,
+    ResponsableComponent,
+    ListaRecursosComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -33,10 +45,10 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     ReactiveFormsModule,
     CoreModule.forRoot(),
-    NgbModule,
-
+    AccordionModule.forRoot(),
+    NgbModule
   ],
-  providers: [],
+  providers: [FasesService,RecursosServicio,ReasignacionService,ResponsableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
