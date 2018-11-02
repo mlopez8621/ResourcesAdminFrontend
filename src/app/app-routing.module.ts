@@ -6,13 +6,15 @@ import { ResponsableComponent } from './responsable/responsable.component';
 import { LandingComponent } from './landing/landing.component';
 import { CommonModule } from '@angular/common';
 import { CrearComponent } from './crear/crear.component';
+import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
 
 const appRoutes: Routes = [
     { path: 'fases', component: FasesComponent},
+    { path: 'crear', component: CrearComponent},
     { path: 'reasignacion', component: ReasignacionComponent},
     { path: 'responsable', component: ResponsableComponent},
-    { path: 'crear', component: CrearComponent},
-    { path: '**', component: LandingComponent}
+    { path: 'lista-recursos', component: ListaRecursosComponent},
+    { path:'**', component:LandingComponent}
 ];
 
 

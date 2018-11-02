@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReasigancionComponent } from './reasignacion.component';
+import { ReasignacionComponent } from './reasignacion.component';
 
 describe('ReasigancionComponent', () => {
-  let component: ReasigancionComponent;
-  let fixture: ComponentFixture<ReasigancionComponent>;
+  let component: ReasignacionComponent;
+  let fixture: ComponentFixture<ReasignacionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReasigancionComponent ]
+      declarations: [ ReasignacionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReasigancionComponent);
+    fixture = TestBed.createComponent(ReasignacionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

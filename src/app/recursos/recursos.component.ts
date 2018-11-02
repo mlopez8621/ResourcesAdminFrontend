@@ -31,7 +31,8 @@ recursos: Recursos[];
     swal.showLoading();
     this.recursosService.getResourcesFiltered(this.estado)
     .subscribe((recursos: any) => { this.recursos = recursos.results;
-      swal.hideLoading(); });
+      swal.close();
+    });
   }
 
 }
