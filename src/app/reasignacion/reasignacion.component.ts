@@ -20,9 +20,8 @@ export class ReasignacionComponent implements OnInit {
    reasignarform: FormGroup;
    reasignarData: ReasignarModel = null;
 
-  constructor(private reasignacionService: ReasignacionService,private responsableService: ResponsableService) { }
+  constructor(private _reasignacionService: ReasignacionService,private responsableService: ResponsableService) { }
   reasignacion: Reasignacion[];
-  private _reasignacionService: ReasignacionService
   selected : any;
   ngOnInit() {
     this.getListReasignacion();
@@ -38,23 +37,30 @@ export class ReasignacionComponent implements OnInit {
 
 
   getListReasignacion():void{
-    this.reasignacionService.getAllPhases().subscribe((reasignacion:any) => this.reasignacion = reasignacion.results);
+    this._reasignacionService.getAllPhases().subscribe((reasignacion:any) => this.reasignacion = reasignacion.results);
   }
 
   reasignar(rasig): void {
     debugger; // Aqui ya llega el nuevo responsable en un campo nuevo que se llama idNuevoResponsable en rasig, ya es hacer la actualizacion
     console.log(rasig)
-    if ( this.reasignarform.invalid) {
-      return;
-    }
+    // if ( this.reasignarform.invalid) {
+    //   return;
+    // }
 
+    var str = rasig.rescursos;
+    var idr = str.split(":", 1);
+    console.log(idr)
+
+    var numidr = +idr;
+    console.log(numidr)
     this.reasignarData = new ReasignarModel(
-       this.reasignarform.value.id,
-       this.reasignarform.value.responsable,
-       this.reasignarform.value.rescursos,
+       rasig.id,
+       rasig.idNuevoResponsable,
+       numidr
     );
-       this._reasignacionService.reasignar( this.reasignarData).subscribe(
-         respon => {
+
+    this._reasignacionService.reasignar( this.reasignarData).subscribe(
+    respon => {
           console.log(respon); // validar la respuesta
           swal(
             'OK!',

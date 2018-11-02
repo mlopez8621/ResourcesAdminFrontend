@@ -19,7 +19,9 @@ export class ReasignacionService{
     }
 
     reasignar(reasignarUpdate: ReasignarModel): Observable<any> {
-        reasignarUpdate.id
-        return this.http.post<any>(URL + reas_update + reasignarUpdate.id, reasignarUpdate);
+      alert (reasignarUpdate.id);
+      alert (reasignarUpdate.responsable);
+      alert (reasignarUpdate.rescursos);
+        return this.http.put<any>(URL + reas_update + reasignarUpdate.id + "/" , reasignarUpdate);
     }
 }
