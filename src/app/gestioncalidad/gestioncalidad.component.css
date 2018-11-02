@@ -1,0 +1,13 @@
+
+hr {
+    border: none;
+    border-bottom: 1px solid rgb(240, 80, 40);
+}
+
+.user_name{
+    font-size:14px;
+    font-weight: bold;
+}
+.comments-list .media{
+    border-bottom: 1px dotted #ccc;
+}

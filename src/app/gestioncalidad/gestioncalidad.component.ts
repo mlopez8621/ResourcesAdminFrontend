@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RecursosServicio } from '../core/services/recursos.service';
 import { Recursos } from '../recursos/recursos';
 import swal from 'sweetalert2';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { IComentarios } from '../interfaces/comentario.interface';
 
 @Component({
   selector: 'app-gestioncalidad',
@@ -11,7 +13,11 @@ import swal from 'sweetalert2';
 export class GestioncalidadComponent implements OnInit {
   recursos: Recursos[];
   estado: string;
-  constructor(private recursosService: RecursosServicio) {
+  comentario: IComentarios [];
+  constructor(
+    private recursosService: RecursosServicio,
+    private modalService: NgbModal
+    ) {
     this.estado = '4';
   }
 
@@ -19,7 +25,25 @@ export class GestioncalidadComponent implements OnInit {
     swal.showLoading();
     this.recursosService.getResourcesFiltered(this.estado)
     .subscribe((recursos: any) => { this.recursos = recursos.results;
-      swal.hideLoading(); });
+      swal.close();
+    });
   }
+
+
+  verComentarios(id , content): void {
+    swal.showLoading();
+      this.recursosService.getCommentsById(1)
+       .subscribe((recursos: any) => {
+         this.comentario = recursos.results;
+           swal.close();
+          this.openModal(content);
+      });
+  }
+
+  openModal(content) {
+    this.modalService.open(content, {backdropClass: 'light-blue-backdrop', backdrop : 'static'});
+  }
+
+
 
 }
