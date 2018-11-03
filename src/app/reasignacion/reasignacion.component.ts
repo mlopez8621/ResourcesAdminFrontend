@@ -32,7 +32,7 @@ export class ReasignacionComponent implements OnInit {
   }
   showResponsable(event,item:any):void{
     item.idNuevoResponsable=event;
-    alert(item);
+    //alert(item);
 }
 
 
@@ -47,16 +47,10 @@ export class ReasignacionComponent implements OnInit {
     //   return;
     // }
 
-    var str = rasig.rescursos;
-    var idr = str.split(":", 1);
-    console.log(idr)
-
-    var numidr = +idr;
-    console.log(numidr)
     this.reasignarData = new ReasignarModel(
        rasig.id,
        rasig.idNuevoResponsable,
-       numidr
+       rasig.rescursos
     );
 
     this._reasignacionService.reasignar( this.reasignarData).subscribe(
