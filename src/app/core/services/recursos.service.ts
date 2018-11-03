@@ -6,7 +6,8 @@ import { Recursos } from '../../recursos/recursos';
 
 
 const URL = environment.url;
-const ESTADOS = 'recursos-filtrados?estado=';
+const ESTADOS = 'recursos?estado=';
+const ALL = 'recursos/';
 const TIPORECURSO = 'tipo-recursos/';
 @Injectable()
 export class RecursosServicio {
@@ -15,6 +16,10 @@ export class RecursosServicio {
 
     getResourcesFiltered(estado: string): Observable<Recursos[]> {
         return this.http.get<Recursos[]>(URL + ESTADOS + estado);
+    }
+
+    getAll(): Observable<Recursos[]> {
+        return this.http.get<Recursos[]>(URL + ALL);
     }
 
     getResurcesType(): Observable<Recursos[]> {

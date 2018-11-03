@@ -5,7 +5,7 @@ import { Recursos } from "./recursos";
 import { environment } from "../../environments/environment";
 
 const URL = environment.url;
-const ESTADOS = "recursos-filtrados?estado=";
+const ESTADOS = 'recursos?estado=';
 
 @Injectable()
 export class RecursosServicio{

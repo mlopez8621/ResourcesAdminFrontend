@@ -1,15 +1,30 @@
-     <br/>
-     <label class="control-label col-sm-4" for="faseName">Escoge una fase</label>
-     <div class="row container">
-        <select class='form-control' [(ngModel)]="selected"   name="faseName">
-            <option [ngValue]="fase.id" *ngFor="let fase of fases" >{{fase.nombre}}</option> 
-          </select>
-        </div>
-        <br/>
+
+ <section >
+    <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Fases</h4>
+            <form  class="form-material">
+                <div class="col-md-12">
+                    <div class="form-group">
+                      <select class='form-control' [(ngModel)]="selected"   name="faseName">
+                          <option [ngValue]="fase.id" *ngFor="let fase of fases" >{{fase.nombre}}</option> 
+                        </select>
+                    </div>
+                </div>
+            </form>
+          </div>
+      </div>
+
+   </section>
+   
+      <div *ngIf="selected" class="row"> 
+          <app-recursos   [estado]=selected  class="col-md-12" ></app-recursos>
+     </div>
+
+
+
+
  
-        
-        <br/>
-        <div *ngIf="selected"> 
-          <app-recursos   [estado]=selected></app-recursos>
-        </div>
+  
+
        
