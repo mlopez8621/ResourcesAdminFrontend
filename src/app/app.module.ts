@@ -14,6 +14,7 @@ import { RecursosComponent } from './recursos/recursos.component';
 import { CrearComponent } from './crear/crear.component';
 import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
+import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.component';
 import { ReasignacionComponent } from './reasignacion/reasignacion.component';
 import { ReasignacionService} from "./reasignacion/reasignacion.services";
 import { FasesService} from "./fases/fases.service";
@@ -32,6 +33,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     RecursosComponent,
     CrearComponent,
     ErrorComponent,
+    GestioncalidadComponent,
     ReasignacionComponent,
     ResponsableComponent,
     ListaRecursosComponent
@@ -48,7 +50,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     AccordionModule.forRoot(),
     NgbModule
   ],
-  providers: [FasesService,RecursosServicio,ReasignacionService,ResponsableService],
+  providers: [ReasignacionService,ResponsableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
