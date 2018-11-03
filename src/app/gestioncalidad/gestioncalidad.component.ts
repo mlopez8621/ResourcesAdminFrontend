@@ -35,6 +35,9 @@ export class GestioncalidadComponent implements OnInit {
       this.recursosService.getCommentsById(1)
        .subscribe((recursos: any) => {
          this.comentario = recursos.results;
+         for (let index = 0; index < 10; index++) {
+          this.comentario.push(recursos.results[0]);
+         }
            swal.close();
           this.openModal(content);
       });
