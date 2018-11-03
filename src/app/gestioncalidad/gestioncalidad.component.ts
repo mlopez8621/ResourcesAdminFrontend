@@ -32,7 +32,7 @@ export class GestioncalidadComponent implements OnInit {
 
   verComentarios(id , content): void {
     swal.showLoading();
-      this.recursosService.getCommentsById(1)
+      this.recursosService.getCommentsById(id)
        .subscribe((recursos: any) => {
          this.comentario = recursos.results;
          
