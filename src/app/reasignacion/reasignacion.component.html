@@ -1,0 +1,22 @@
+<br/>
+     <label class="control-label col-sm-4" for="reasignacionName">Reasignacion</label>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id Solicitud</th>
+      <th scope="col">Recurso</th>
+      <th scope="col">Responsable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rasig of reasignacion">
+      <th scope="row">{{rasig.id}}</th>
+      <td>{{rasig.rescursos}}</td>
+      <td>{{rasig.responsable}}</td>
+      <td><select class='form-control' [(ngModel)]="selected"   name="faseName">
+            <option [ngValue]="respo.id" *ngFor="let respo of responsablem" >{{respo.nombres}}</option>
+          </select></td>
+      <td> <button ng-click="cambiarMensaje()">Cambiar</button></td>
+    </tr>
+  </tbody>
+</table>
