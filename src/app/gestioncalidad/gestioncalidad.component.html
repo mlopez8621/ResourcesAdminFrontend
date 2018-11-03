@@ -1,0 +1,48 @@
+
+<div class="row">
+    <div class="col-xs-12 col-md-4 faintcards" *ngFor="let rec of recursos">
+                                <div class="card">
+                                <span class="h6  mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">{{rec.nombre}}</span>
+                                    <div class="card-body text-center">
+                                        <p class="card-text ">
+                                            <strong> Proyecto: </strong> {{rec.idProyecto}}
+                                            <strong>  Solicitud: </strong> {{rec.idSolicitud}}
+                                        </p> 
+                                     
+                                        <p class="card-text "><strong> Descripcion : </strong> {{rec.descripcion}}</p> 
+                                        <p class="card-text "><strong> Descripción Solicitud : </strong> {{rec.descripcionSolicitud}}</p> 
+                                        <hr>
+                                        <a  class="btn btn-light btn-lg btn-block" (click)="verComentarios(rec.id  , content )"> comentarios <i class="fa fa-comments" aria-hidden="true"></i>
+                                         </a>
+                                    </div>
+                                  </div>
+     </div>
+</div>
+
+
+<ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title "> Cantidad de Comentarios:  <span class="titleComment"> {{comentario.length}} </span> </h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body contentmax">
+            <ng-container  *ngFor="let item of comentario">
+                <div class="col-md-12">
+                    <div class="commentPanel panel-default">
+                           <div class="panel-heading">
+                                 <strong > usuario:  <span class="green"> {{ item.usuario + ' ,'}} </span>  {{item.nombre_responsable}} {{item.apellidos_responsable}}   </strong> <span class="text-muted"> {{item.fecha}}</span>
+                            </div>    
+                            <div class="conten-body">
+                                <p> {{ item.comentario}}</p>
+                            </div>
+                        </div>
+                </div>
+            </ng-container>
+        </div>
+
+
+
+
+      </ng-template>
