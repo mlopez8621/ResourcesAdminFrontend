@@ -1,0 +1,22 @@
+<br/>
+     <label class="control-label col-sm-4" for="responsablemName">Responsables</label>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">usuario</th>
+      <th scope="col">rol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let resp of responsable">
+      <th scope="row">{{resp.id}}</th>
+      <td>{{resp.nombres}}</td>
+      <td>{{resp.apellidos}}</td>
+      <td>{{resp.usuario}}</td>
+      <td>{{resp.rol}}</td>
+    </tr>
+  </tbody>
+</table>

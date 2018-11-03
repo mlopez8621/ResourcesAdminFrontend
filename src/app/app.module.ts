@@ -15,6 +15,15 @@ import { CrearComponent } from './crear/crear.component';
 import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
 import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.component';
+import { ReasignacionComponent } from './reasignacion/reasignacion.component';
+import { ReasignacionService} from "./reasignacion/reasignacion.services";
+import { FasesService} from "./fases/fases.service";
+import { RecursosServicio} from "./recursos/recursos.service";
+
+import { ResponsableComponent } from './responsable/responsable.component';
+import { ResponsableService} from "./responsable/responsable.services";
+import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +33,10 @@ import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.compone
     RecursosComponent,
     CrearComponent,
     ErrorComponent,
-    GestioncalidadComponent
+    GestioncalidadComponent,
+    ReasignacionComponent,
+    ResponsableComponent,
+    ListaRecursosComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -35,10 +47,10 @@ import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.compone
     FormsModule,
     ReactiveFormsModule,
     CoreModule.forRoot(),
-    NgbModule,
-
+    AccordionModule.forRoot(),
+    NgbModule
   ],
-  providers: [],
+  providers: [ReasignacionService,ResponsableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,8 @@ import { IComentarios } from 'src/app/interfaces/comentario.interface';
 
 
 const URL = environment.url;
-const ESTADOS = 'recursos-filtrados?estado=';
+const ESTADOS = 'recursos?estado=';
+const ALL = 'recursos/';
 const TIPORECURSO = 'tipo-recursos/';
 const  COMMENTS  = 'comentarios?idRecurso=';
 @Injectable()
@@ -17,6 +18,10 @@ export class RecursosServicio {
 
     getResourcesFiltered(estado: string): Observable<Recursos[]> {
         return this.http.get<Recursos[]>(URL + ESTADOS + estado);
+    }
+
+    getAll(): Observable<Recursos[]> {
+        return this.http.get<Recursos[]>(URL + ALL);
     }
 
     getResurcesType(): Observable<Recursos[]> {

@@ -1,0 +1,17 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<div class="row container">
+    <label class="control-label col-sm-4" for="acc-lista-recursos">Clic sobre el nombre del recurso para ver su detalle</label>
+</div>
+    <br/>
+<div>
+   <accordion id="acc-lista-recursos">
+    <accordion-group *ngFor="let rec of recursos" [heading]="rec.nombre">
+      <label>Estado :</label> 
+      <p>{{ rec?.nombre_estado }}</p>
+      <label>Descripcion: </label> 
+      <p>{{ rec?.descripcion }}</p>
+      <label>Tipo Recurso:</label>  
+      <p>{{ rec?.nombre_tipo }}</p>
+    </accordion-group>
+  </accordion>
+</div>

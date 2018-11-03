@@ -1,5 +1,7 @@
 export interface IComentarios {
     comentario: string;
-    revisor: string;
+    usuario: string;
     fecha: string;
+    nombre_responsable:string;
+    apellidos_responsable:string;
 }
