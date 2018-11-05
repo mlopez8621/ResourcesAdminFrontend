@@ -22,6 +22,8 @@ import { RecursosServicio} from "./recursos/recursos.service";
 
 import { ResponsableComponent } from './responsable/responsable.component';
 import { ResponsableService} from "./responsable/responsable.services";
+import { SelectListComponent } from './select-list/select-list.component';
+
 import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 @NgModule({
@@ -36,7 +38,8 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     GestioncalidadComponent,
     ReasignacionComponent,
     ResponsableComponent,
-    ListaRecursosComponent
+    ListaRecursosComponent,
+    SelectListComponent
   ],
   exports: [RecursosComponent],
   imports: [
