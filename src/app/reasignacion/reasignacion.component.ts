@@ -48,37 +48,32 @@ export class ReasignacionComponent implements OnInit {
   reasignar(rasig): void {
     debugger; // Aqui ya llega el nuevo responsable en un campo nuevo que se llama idNuevoResponsable en rasig, ya es hacer la actualizacion
     console.log(rasig)
-    // if ( this.reasignarform.invalid) {
-    //   return;
-    // }
 
-   this.reasignarData = new ReasignarModel(
-       rasig.id,
-       rasig.responsable,
-       rasig.idNuevoResponsable,
-       rasig.rescursos
+    this.reasignarData = new ReasignarModel(
+      rasig.id,
+      rasig.idNuevoResponsable,
+      rasig.rescursos,
     );
 
-    this.reasignacionService.reasignar( this.reasignarData).subscribe(
-    respon => {
-          console.log(respon); // validar la respuesta
-          swal(
-            'OK!',
-            'Creado Exitosamente',
-            'success'
-          );
-       },
-       err => {
+    this.reasignacionService.reasignar(this.reasignarData).subscribe(
+      respon => {
+        console.log(respon); // validar la respuesta
+        swal(
+          'OK!',
+          'Creado Exitosamente',
+          'success'
+        );
+      },
+      err => {
         console.log(err); // cuando hay error
         swal(
           'ERROR!',
           'Error creando la solicitud',
           'error'
         );
-       } );
-
-
-   }
+      });
+    location.reload();
+  }
 }
 
 

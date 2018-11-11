@@ -1,8 +1,7 @@
 export class ReasignarModel {
   constructor(
     public id: number,
-    public responsable: string,
-    public idResponsable: number,
-    public recurso: string
+    public responsable: number,
+    public rescursos: number
   ) { }
 }
