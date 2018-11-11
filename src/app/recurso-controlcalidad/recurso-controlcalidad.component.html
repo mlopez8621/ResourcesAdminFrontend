@@ -1,0 +1,20 @@
+<br/>
+     <label class="control-label col-sm-4" for="reasignacionName">Recurso control calidad</label>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id </th>
+      <th scope="col">Recurso</th>
+      <th scope="col">Item Chequeo</th>
+      <th scope="col">Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of recursocontrolcalidad">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.nombre_recurso}}</td>
+      <td>{{item.nombre_item}}</td>
+      <td>{{item.resultado}}</td>
+    </tr>
+  </tbody>
+</table>
