@@ -16,5 +16,4 @@ export class RecursosServicio {
   getResourcesFiltered(estado: string): Observable<Recursos[]> {
     return this.http.get<Recursos[]>(URL + ESTADOS + estado);
   }
-
 }

@@ -1,7 +1,8 @@
 export class ReasignarModel {
-    constructor(
-          public id :number,
-          public responsable: number,
-          public rescursos: number
-     ) { }
+  constructor(
+    public id: number,
+    public responsable: string,
+    public idResponsable: number,
+    public recurso: string
+  ) { }
 }

@@ -3,12 +3,11 @@ import { Observable } from "rxjs";
 import { Reasignacion } from "./reasignacion";
 import { HttpClient } from '@angular/common/http';
 import { environment } from "../../environments/environment";
-import {ReasignarModel} from "../models/reasignar.model";
+import { ReasignarModel } from "../models/reasignar.model";
 
 const URL = environment.url;
 const REASIGNACION = "recurso-responsable";
 const reas_update = "recurso_res/";
-
 @Injectable()
 export class ReasignacionService{
 
@@ -20,7 +19,7 @@ export class ReasignacionService{
 
     reasignar(reasignarUpdate: ReasignarModel): Observable<any> {
       //alert (reasignarUpdate.id);
-      //#alert (reasignarUpdate.responsable);
+      //alert (reasignarUpdate.responsable);
       //alert (reasignarUpdate.rescursos);
         return this.http.put<any>(URL + reas_update + reasignarUpdate.id + "/" , reasignarUpdate);
     }

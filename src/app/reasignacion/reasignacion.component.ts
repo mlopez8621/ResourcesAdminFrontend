@@ -20,9 +20,10 @@ export class ReasignacionComponent implements OnInit {
    reasignarform: FormGroup;
    reasignarData: ReasignarModel = null;
 
-  constructor(private _reasignacionService: ReasignacionService,private responsableService: ResponsableService) { }
+  constructor(private reasignacionService: ReasignacionService,private responsableService: ResponsableService) { }
   reasignacion: Reasignacion[];
   selected : any;
+  responsable: Responsable[];
   ngOnInit() {
     this.getListReasignacion();
   }
@@ -37,7 +38,11 @@ export class ReasignacionComponent implements OnInit {
 
 
   getListReasignacion():void{
-    this._reasignacionService.getAllPhases().subscribe((reasignacion:any) => this.reasignacion = reasignacion.results);
+    this.reasignacionService.getAllPhases().subscribe((reasignacion:any) => this.reasignacion = reasignacion.results);
+  }
+
+  getListResponsable():void{
+    this.responsableService.getAllPhases().subscribe((responsable:any) => this.responsable = responsable.results);
   }
 
   reasignar(rasig): void {
@@ -47,13 +52,14 @@ export class ReasignacionComponent implements OnInit {
     //   return;
     // }
 
-    this.reasignarData = new ReasignarModel(
+   this.reasignarData = new ReasignarModel(
        rasig.id,
+       rasig.responsable,
        rasig.idNuevoResponsable,
        rasig.rescursos
     );
 
-    this._reasignacionService.reasignar( this.reasignarData).subscribe(
+    this.reasignacionService.reasignar( this.reasignarData).subscribe(
     respon => {
           console.log(respon); // validar la respuesta
           swal(
@@ -74,4 +80,5 @@ export class ReasignacionComponent implements OnInit {
 
    }
 }
+
 
