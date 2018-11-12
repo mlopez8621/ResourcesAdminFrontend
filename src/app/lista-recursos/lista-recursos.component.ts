@@ -12,7 +12,6 @@ import { RecursosServicio } from '../core/services/recursos.service';
 export class ListaRecursosComponent implements OnInit {
   recursos: Recursos[];
   selectedRec: Recursos;
-  
   onSelect(rec: Recursos): void {
     this.selectedRec = rec;
   }

@@ -16,14 +16,15 @@ import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
 import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.component';
 import { ReasignacionComponent } from './reasignacion/reasignacion.component';
-import { ReasignacionService} from "./reasignacion/reasignacion.services";
-import { FasesService} from "./fases/fases.service";
-import { RecursosServicio} from "./recursos/recursos.service";
+import { ReasignacionService} from './reasignacion/reasignacion.services';
+// import { FasesService} from "./fases/fases.service";
+// import { RecursosServicio} from "./recursos/recursos.service";
 import { ResponsableComponent } from './responsable/responsable.component';
-import { ResponsableService} from "./responsable/responsable.services";
+import { ResponsableService} from './responsable/responsable.services';
 import { SelectListComponent } from './select-list/select-list.component';
 import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { AdmingestionComponent } from './admingestion/admingestion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     ReasignacionComponent,
     ResponsableComponent,
     ListaRecursosComponent,
-    SelectListComponent
+    SelectListComponent,
+    AdmingestionComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -51,7 +53,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     AccordionModule.forRoot(),
     NgbModule
   ],
-  providers: [ReasignacionService,ResponsableService],
+  providers: [ReasignacionService, ResponsableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
