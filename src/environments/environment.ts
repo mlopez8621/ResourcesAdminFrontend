@@ -5,10 +5,8 @@
 export const environment = {
   production: false,
    url: 'http://127.0.0.1:8000/'
-<<<<<<< HEAD
-=======
   //url: 'https://resources-admin-conectate.herokuapp.com/'
->>>>>>> sprint3_hu14
+
 
 };
 
