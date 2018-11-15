@@ -26,6 +26,7 @@ import { SelectListComponent } from './select-list/select-list.component';
 
 import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     ReactiveFormsModule,
     CoreModule.forRoot(),
     AccordionModule.forRoot(),
-    NgbModule
+    NgbModule,
+    CollapseModule.forRoot()
   ],
   providers: [ReasignacionService,ResponsableService],
   bootstrap: [AppComponent]
