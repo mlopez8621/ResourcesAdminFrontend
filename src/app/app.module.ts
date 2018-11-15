@@ -16,17 +16,17 @@ import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
 import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.component';
 import { ReasignacionComponent } from './reasignacion/reasignacion.component';
-import { ReasignacionService} from "./reasignacion/reasignacion.services";
-import { FasesService} from "./fases/fases.service";
-import { RecursosServicio} from "./recursos/recursos.service";
-
+import { ReasignacionService} from './reasignacion/reasignacion.services';
+import { FasesService} from './fases/fases.service';
+import { RecursosServicio} from './recursos/recursos.service';
 import { ResponsableComponent } from './responsable/responsable.component';
-import { ResponsableService} from "./responsable/responsable.services";
+import { ResponsableService} from './responsable/responsable.services';
 import { SelectListComponent } from './select-list/select-list.component';
-
 import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { RecursoControlcalidadComponent } from './recurso-controlcalidad/recurso-controlcalidad.component';
+import { Recursos_controlcalidadServicio } from './recurso-controlcalidad/recurso-controlcalidad.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +40,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     ReasignacionComponent,
     ResponsableComponent,
     ListaRecursosComponent,
-    SelectListComponent
+    SelectListComponent,
+    RecursoControlcalidadComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -55,7 +56,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     NgbModule,
     CollapseModule.forRoot()
   ],
-  providers: [ReasignacionService,ResponsableService],
+
+  providers: [FasesService, RecursosServicio, ReasignacionService, ResponsableService, Recursos_controlcalidadServicio],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

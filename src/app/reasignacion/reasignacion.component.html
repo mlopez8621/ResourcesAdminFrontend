@@ -12,8 +12,8 @@
   <tbody>
     <tr *ngFor="let rasig of reasignacion">
       <th scope="row">{{rasig.id}}</th>
-      <td>{{rasig.recursos}}</td>
-      <td>{{rasig.responsable}}</td>
+      <td>{{rasig.rescursos}}. {{rasig.rescursosName}}</td>
+      <td>{{rasig.responsable}}. {{rasig.responsableName}}</td>
       <td><app-select-list (Responsable)="showResponsable($event,rasig)"></app-select-list></td>
       <td> <button (click)="reasignar(rasig)">Cambiar</button></td>
     </tr>
