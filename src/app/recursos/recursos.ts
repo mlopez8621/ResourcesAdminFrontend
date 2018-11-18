@@ -7,4 +7,5 @@ export class Recursos{
     idProyecto:string;
     descripcionSolicitud:string;
     estado:string;
+    comentario:string;
 }

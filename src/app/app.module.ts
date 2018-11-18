@@ -24,6 +24,7 @@ import { ResponsableService} from './responsable/responsable.services';
 import { SelectListComponent } from './select-list/select-list.component';
 import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { RecursoControlcalidadComponent } from './recurso-controlcalidad/recurso-controlcalidad.component';
 import { Recursos_controlcalidadServicio } from './recurso-controlcalidad/recurso-controlcalidad.service';
 @NgModule({
@@ -52,7 +53,8 @@ import { Recursos_controlcalidadServicio } from './recurso-controlcalidad/recurs
     ReactiveFormsModule,
     CoreModule.forRoot(),
     AccordionModule.forRoot(),
-    NgbModule
+    NgbModule,
+    CollapseModule.forRoot()
   ],
 
   providers: [FasesService, RecursosServicio, ReasignacionService, ResponsableService, Recursos_controlcalidadServicio],

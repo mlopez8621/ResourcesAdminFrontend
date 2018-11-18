@@ -78,3 +78,8 @@ hr {
     font-size: 18px;
     color: #007b5e !important;
 }
+
+input::placeholder {
+    color: blue;
+    font-style: italic;
+  }
