@@ -6,12 +6,45 @@
 <div>
    <accordion id="acc-lista-recursos">
     <accordion-group *ngFor="let rec of recursos" [heading]="rec.nombre">
-      <label>Estado :</label> 
-      <p>{{ rec?.nombre_estado }}</p>
+      <label>id :</label>
+      <p>{{ rec?.id }}</p>
+      <label>Estado :</label>
+      <p>{{ rec?.estado}}</p>
       <label>Descripcion: </label> 
       <p>{{ rec?.descripcion }}</p>
       <label>Tipo Recurso:</label>  
-      <p>{{ rec?.nombre_tipo }}</p>
+      <p>{{ rec?.tipoRecurso }}</p>
+      <hr>
+      <a  class="btn btn-light btn-lg btn-block" (click)="verRecursoIntermedio(rec.id  , content )"> Recursos Intermedios <i class="fa fa-pencil" aria-hidden="true"></i>
+       </a>
     </accordion-group>
   </accordion>
 </div>
+
+
+<ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title "> Cantidad de Recursos Intermedios:  <span class="titleComment"> {{recursoIntermedio.length}} </span> </h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body contentmax">
+            <ng-container  *ngFor="let item of recursoIntermedio">
+                <div class="col-md-12">
+                    <div class="commentPanel panel-default">
+                           <div class="panel-heading">
+                                 <strong > usuario:  <span class="green"> {{ item.nombre + ' ,'}} </span>  {{item.descripcion}} {{item.tipoRecurso}}   </strong> <span class="text-muted"> {{item.estado}}</span>
+                            </div>
+                            <div class="conten-body">
+                                <p> {{ item.responsable}}</p>
+                            </div>
+                        </div>
+                </div>
+            </ng-container>
+        </div>
+
+
+
+
+      </ng-template>
