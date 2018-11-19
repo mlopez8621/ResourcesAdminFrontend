@@ -1,6 +1,8 @@
 export class Recurso_controlcalidad{
-    id : number;
-    nombre_recurso : string;
-    nombre_item : string;
-    resultado : boolean;
+  constructor(
+    public id : number,
+    public nombre_recurso : string,
+    public nombre_item : string,
+    public resultado : boolean
+) {}
 }

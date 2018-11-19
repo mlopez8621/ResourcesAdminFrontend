@@ -27,6 +27,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { RecursoControlcalidadComponent } from './recurso-controlcalidad/recurso-controlcalidad.component';
 import { Recursos_controlcalidadServicio } from './recurso-controlcalidad/recurso-controlcalidad.service';
+
 @NgModule({
   declarations: [
     AppComponent,
