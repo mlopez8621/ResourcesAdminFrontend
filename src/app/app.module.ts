@@ -26,8 +26,7 @@ import { ListaRecursosComponent } from './lista-recursos/lista-recursos.componen
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { RecursoControlcalidadComponent } from './recurso-controlcalidad/recurso-controlcalidad.component';
 import { Recursos_controlcalidadServicio } from './recurso-controlcalidad/recurso-controlcalidad.service';
-import { DiligenciarChecksComponent } from './diligenciar-checks/diligenciar-checks.component';
-import { SelectListCcComponent } from './select-list-cc/select-list-cc.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +41,7 @@ import { SelectListCcComponent } from './select-list-cc/select-list-cc.component
     ResponsableComponent,
     ListaRecursosComponent,
     SelectListComponent,
-    RecursoControlcalidadComponent,
-    DiligenciarChecksComponent,
-    SelectListCcComponent
+    RecursoControlcalidadComponent
   ],
   exports: [RecursosComponent],
   imports: [
