@@ -1,5 +1,5 @@
 <br/>
-     <label class="control-label col-sm-4" for="reasignacionName">Recurso control calidad</label>
+     <label class="control-label col-sm-4" for="recursoCCName">Recurso control calidad</label>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -7,6 +7,7 @@
       <th scope="col">Recurso</th>
       <th scope="col">Item Chequeo</th>
       <th scope="col">Resultado</th>
+      <th scope="col">Resultado2</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,9 @@
       <td>{{item.nombre_recurso}}</td>
       <td>{{item.nombre_item}}</td>
       <td>{{item.resultado}}</td>
+      <td> <button (click)="cambiar_estado(item)">Cambiar</button></td>
+
     </tr>
+
   </tbody>
 </table>
