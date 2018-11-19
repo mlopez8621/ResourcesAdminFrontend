@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Recursos } from '../recursos/recursos';
 import swal from 'sweetalert2';
 import { RecursosServicio } from '../core/services/recursos.service';
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {IRecursoIntermedio} from "../interfaces/recursoIntermedio.interface";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { IRecursoIntermedio } from "../interfaces/recursoIntermedio.interface";
 
 
 @Component({
@@ -38,9 +38,10 @@ export class ListaRecursosComponent implements OnInit {
 
   verRecursoIntermedio(id , content): void {
     swal.showLoading();
-    this.recursosService.getRecursoIntermedioById(1)
+    this.recursosService.getRecursoIntermedioById(id)
       .subscribe((recursos: any) => {
         this.recursoIntermedio = recursos.results;
+
           swal.close();
           this.openModal(content);
       });
