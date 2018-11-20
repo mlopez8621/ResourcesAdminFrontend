@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { FasesComponent } from './fases/fases.component';
@@ -51,6 +53,7 @@ import { AdmingestionComponent } from './admingestion/admingestion.component';
     ReactiveFormsModule,
     CoreModule.forRoot(),
     AccordionModule.forRoot(),
+    AngularFontAwesomeModule,
     NgbModule
   ],
   providers: [ReasignacionService, ResponsableService],
