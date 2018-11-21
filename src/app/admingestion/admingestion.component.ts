@@ -97,11 +97,20 @@ export class AdmingestionComponent implements OnInit {
   }
 
   openModal( item: Iauditoria ) {
-
     this._recursosService.getResponsable(item.id)
     .subscribe((result: any) => {
       debugger;
       console.log(result);
+
+      this.detalle = new DetalleRecursoModel(
+         item.tipoRecurso.nombre,
+         item.idSolicitud,
+         item.idProyecto,
+         item.descripcionSolicitud,
+          'Gestion de Calidad',
+         result.results
+        );
+  this.modalService.open(this.content);
     },
     (error) =>  {
       swal({
@@ -111,17 +120,6 @@ export class AdmingestionComponent implements OnInit {
       });
     }
     );
-    this.detalle = new DetalleRecursoModel(
-          2,
-          'nombre',
-          'descripcion',
-          2,
-        2,
-        2,
-        'descripcionSolicitud',
-          2,
-        'auditor'
-    );
-    this.modalService.open(this.content);
+
   }
 }

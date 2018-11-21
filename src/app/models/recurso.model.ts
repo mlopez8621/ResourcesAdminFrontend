@@ -17,14 +17,11 @@ export class RecursoModel {
 
   export class DetalleRecursoModel {
     constructor(
-      public id: number,
-      public nombre: string,
-      public descripcion: string,
-      public tipoRecurso: number,
+      public tipoRecurso: string,
       public idSolicitud: number,
       public idProyecto: number,
       public descripcionSolicitud: string,
-      public estado: number,
-      public auditor: string,
+      public estado: string,
+      public Responsable:  any [],
     ) { }
   }

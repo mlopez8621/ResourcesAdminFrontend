@@ -47,17 +47,21 @@
   <div class="modal-body">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Nombre</h5>
-            <p class="card-text">{{detalle.nombre}} </p>
+            <h5 class="card-title">Descripcion Solicitud</h5>
+            <p class="card-text">{{detalle.descripcionSolicitud}} </p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"> <p class="d-inline"> Datos :  valor </p> </li>
-            <li class="list-group-item">mas datos </li>
-            <li class="list-group-item">mas </li>
+            <li class="list-group-item"> <p class="d-inline">  <strong>  Recurso :  </strong> {{detalle.tipoRecurso}} </p> </li>
+            <li class="list-group-item"><p class="d-inline">  <strong> id Proyecto  :   </strong> {{detalle.idProyecto}} </p></li>
+            <li class="list-group-item"><p class="d-inline">  <strong>  id Solicitud  :   </strong>{{detalle.idSolicitud}} </p></li>
+            <li class="list-group-item"><p class="d-inline">   <strong>  Estado   :    </strong> {{detalle.estado}} </p></li>
+
           </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+          <div class="card-body" >
+              <h5 class="card-title">  {{ detalle.Responsable.length >1 ? 'Responsables':'Responsable'}}</h5>
+              <ul class="list-group list-group-flush" *ngFor="let Responsable  of detalle.Responsable"  >
+                  <li class="list-group-item"> <p class="d-inline">  <strong>  nombre :  </strong> {{Responsable.responsable.nombres }} {{Responsable.responsable.apellidos }}</p> </li>
+                </ul>
           </div>
         </div>
   </div>
