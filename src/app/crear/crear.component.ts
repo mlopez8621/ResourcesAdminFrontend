@@ -58,6 +58,7 @@ export class CrearComponent implements OnInit {
          respon => {
            this.crearform.reset();
           console.log(respon); // validar la respuesta
+         this.crearform.reset();
           swal(
             'OK!',
             'Creado Exitosamente',

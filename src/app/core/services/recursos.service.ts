@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { Recursos } from '../../recursos/recursos';
 import { IComentarios } from 'src/app/interfaces/comentario.interface';
+import { Iauditoria } from 'src/app/interfaces/admingestion.interface';
+import { RecursoModel } from 'src/app/models/recurso.model';
+import {IRecursoIntermedio} from '../../interfaces/recursoIntermedio.interface';
 
 
 const URL = environment.url;
@@ -11,6 +14,10 @@ const ESTADOS = 'recursos?estado=';
 const ALL = 'recursos/';
 const TIPORECURSO = 'tipo-recursos/';
 const  COMMENTS  = 'comentarios?idRecurso=';
+const AUDITORIAGESTION = 'auditoria?estado=';
+const RECURSO = 'recurso ';
+const  RESPONSABLE  = 'responsable-recurso?recurso=';
+const  RECURSOINTERMEDIO  = 'recurso-intermedio?idRecurso=';
 @Injectable()
 export class RecursosServicio {
 
@@ -30,6 +37,22 @@ export class RecursosServicio {
 
     getCommentsById(id: any): Observable<IComentarios[]> {
         return this.http.get<IComentarios[]>(URL + COMMENTS + id);
+    }
+
+    getAuditoriaStatus(id: any): Observable<Iauditoria[]> {
+        return this.http.get<Iauditoria[]>(URL + AUDITORIAGESTION + id);
+    }
+
+
+    setAuditorResurces(recurce: RecursoModel): Observable<any> {
+        return this.http.put<any>(URL + RECURSO , recurce);
+    }
+
+  getResponsable(id: any): Observable<Iauditoria[]> {
+        return this.http.get<Iauditoria[]>(URL + RESPONSABLE + id);
+    }
+    getRecursoIntermedioById(id: any): Observable<IRecursoIntermedio[]> {
+        return this.http.get<IRecursoIntermedio[]>(URL + RECURSOINTERMEDIO + id);
     }
 
 

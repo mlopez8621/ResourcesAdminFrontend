@@ -1,8 +1,14 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ReasignacionService } from "./reasignacion.services";
 import { Reasignacion } from "./reasignacion";
 import { ResponsableService } from "../responsable/responsable.services";
 import { Responsable } from "../responsable/responsable";
+import {CrearModel} from "../models/crear.model";
+import {ReasignarModel} from "../models/reasignar.model";
+
+import swal from "sweetalert2";
+
 
 
 @Component({
@@ -11,19 +17,24 @@ import { Responsable } from "../responsable/responsable";
   styleUrls: ['./reasignacion.component.css']
 })
 export class ReasignacionComponent implements OnInit {
+   reasignarform: FormGroup;
+   reasignarData: ReasignarModel = null;
 
   constructor(private reasignacionService: ReasignacionService,private responsableService: ResponsableService) { }
   reasignacion: Reasignacion[];
-  responsable: Responsable[];
   selected : any;
+  responsable: Responsable[];
   ngOnInit() {
     this.getListReasignacion();
-    this.getListResponsable();
   }
 
   getResources():void{
       alert(this.selected)
   }
+  showResponsable(event,item:any):void{
+    item.idNuevoResponsable=event;
+    //alert(item);
+}
 
 
   getListReasignacion():void{
@@ -33,5 +44,36 @@ export class ReasignacionComponent implements OnInit {
   getListResponsable():void{
     this.responsableService.getAllPhases().subscribe((responsable:any) => this.responsable = responsable.results);
   }
+
+  reasignar(rasig): void {
+    debugger; // Aqui ya llega el nuevo responsable en un campo nuevo que se llama idNuevoResponsable en rasig, ya es hacer la actualizacion
+    console.log(rasig)
+
+    this.reasignarData = new ReasignarModel(
+      rasig.id,
+      rasig.idNuevoResponsable,
+      rasig.rescursos,
+    );
+
+    this.reasignacionService.reasignar(this.reasignarData).subscribe(
+      respon => {
+        console.log(respon); // validar la respuesta
+        swal(
+          'OK!',
+          'Creado Exitosamente',
+          'success'
+        );
+      },
+      err => {
+        console.log(err); // cuando hay error
+        swal(
+          'ERROR!',
+          'Error creando la solicitud',
+          'error'
+        );
+      });
+    location.reload();
+  }
 }
+
 

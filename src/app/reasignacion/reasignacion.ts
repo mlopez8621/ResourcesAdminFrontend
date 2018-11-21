@@ -1,5 +1,8 @@
 export class Reasignacion{
     id : number;
-    responsable : string;
-    rescursos: string;
+    responsable:number
+    responsableName: string;
+    rescursos: number;
+    rescursosName: string;
+    idNuevoResponsable:number;
 }

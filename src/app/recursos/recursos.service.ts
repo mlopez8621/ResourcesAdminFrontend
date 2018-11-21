@@ -8,12 +8,12 @@ const URL = environment.url;
 const ESTADOS = 'recursos?estado=';
 
 @Injectable()
-export class RecursosServicio{
+export class RecursosServicio {
 
-    constructor(private http:HttpClient){}
+  constructor(private http: HttpClient) {
+  }
 
-    getResourcesFiltered(estado:string):Observable<Recursos[]>{
-        return this.http.get<Recursos[]>(URL+ESTADOS+estado);
-    }
-    
+  getResourcesFiltered(estado: string): Observable<Recursos[]> {
+    return this.http.get<Recursos[]>(URL + ESTADOS + estado);
+  }
 }

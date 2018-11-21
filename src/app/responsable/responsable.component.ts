@@ -15,6 +15,7 @@ export class ResponsableComponent implements OnInit {
   selected : any;
   ngOnInit() {
     this.getListResponsable();
+    this.getResponsable();
   }
 
   getResources():void{
@@ -24,6 +25,10 @@ export class ResponsableComponent implements OnInit {
 
   getListResponsable():void{
     this.responsableService.getAllPhases().subscribe((responsable:any) => this.responsable = responsable.results);
+  }
+
+  getResponsable():void{
+    this.responsableService.getOneResponsable().subscribe((responsable:any) => this.responsable = responsable.results);
   }
 }
 

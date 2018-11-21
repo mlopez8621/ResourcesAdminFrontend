@@ -1,4 +1,3 @@
-
 <div class="row">
     <div class="col-xs-12 col-md-4 faintcards" *ngFor="let rec of recursos">
                                 <div class="card">
@@ -12,8 +11,12 @@
                                         <p class="card-text "><strong> Descripcion : </strong> {{rec.descripcion}}</p> 
                                         <p class="card-text "><strong> Descripción Solicitud : </strong> {{rec.descripcionSolicitud}}</p> 
                                         <hr>
-                                        <a  class="btn btn-light btn-lg btn-block" (click)="verComentarios(rec.id  , content )"> comentarios <i class="fa fa-comments" aria-hidden="true"></i>
-                                         </a>
+                                        <a  class="btn btn-light btn-lg btn-block" (click)="verComentarios(rec.id  , content )"> ver comentarios <i class="fa fa-comments" aria-hidden="true"></i>
+                                        </a>
+                                        <hr>
+                                        <input [(ngModel)]="rec.comentario" type="textarea" placeholder="Coloca aqui tu comentario" rows="2" class="form-control"/>
+                                        <a  class="btn btn-light btn-lg btn-block" (click)="enviarComentario(rec.id)"> Enviar mi comentario <i class="fa fa-comments" aria-hidden="true"></i>
+                                        </a>
                                     </div>
                                   </div>
      </div>

@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { FasesComponent } from './fases/fases.component';
@@ -16,14 +18,17 @@ import { ErrorComponent } from './error/error.component';
 import { CoreModule } from './core/core.module';
 import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.component';
 import { ReasignacionComponent } from './reasignacion/reasignacion.component';
-import { ReasignacionService} from "./reasignacion/reasignacion.services";
-import { FasesService} from "./fases/fases.service";
-import { RecursosServicio} from "./recursos/recursos.service";
-
+import { ReasignacionService} from './reasignacion/reasignacion.services';
 import { ResponsableComponent } from './responsable/responsable.component';
-import { ResponsableService} from "./responsable/responsable.services";
+import { ResponsableService} from './responsable/responsable.services';
+import { SelectListComponent } from './select-list/select-list.component';
 import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { AdmingestionComponent } from './admingestion/admingestion.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { RecursoControlcalidadComponent } from './recurso-controlcalidad/recurso-controlcalidad.component';
+import { Recursos_controlcalidadServicio } from './recurso-controlcalidad/recurso-controlcalidad.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +41,10 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     GestioncalidadComponent,
     ReasignacionComponent,
     ResponsableComponent,
-    ListaRecursosComponent
+    ListaRecursosComponent,
+    SelectListComponent,
+    AdmingestionComponent,
+    RecursoControlcalidadComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -48,9 +56,11 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     ReactiveFormsModule,
     CoreModule.forRoot(),
     AccordionModule.forRoot(),
+    CollapseModule.forRoot(),
+    AngularFontAwesomeModule,
     NgbModule
   ],
-  providers: [ReasignacionService,ResponsableService],
+  providers: [ReasignacionService, ResponsableService, Recursos_controlcalidadServicio],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

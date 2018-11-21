@@ -1,0 +1,25 @@
+<br/>
+<h4 class="card-title">Recurso control calidad</h4>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id </th>
+      <th scope="col">Recurso</th>
+      <th scope="col">Item Chequeo</th>
+      <th scope="col">Valor Chequeo</th>
+      <th scope="col">Cambiar estado de chequeo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of recursocontrolcalidad">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.nombre_recurso}}</td>
+      <td>{{item.nombre_item}}</td>
+      <td>{{item.resultado}}</td>
+      <td> <button (click)="cambiar_estado(item)">Cambiar</button></td>
+
+    </tr>
+
+  </tbody>
+</table>
