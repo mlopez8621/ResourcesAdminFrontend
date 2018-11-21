@@ -11,21 +11,23 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Recursos
         </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li> <a class="dropdown-item" href="#">General</a></li>
-          <li> <a class="dropdown-item" routerLink="/crear">Crear</a></li>
-          <li> <a class="dropdown-item" routerLink="/fases">Buscar por Fases</a></li>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">General</a>
+          <a class="dropdown-item" routerLink="/crear">Crear</a>
+          <a class="dropdown-item" routerLink="/fases">Buscar por Fases</a>
           <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle">Gestion de Calidad</a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" routerLink="/gestioncalidad">Ver Comentario </a> </li>
                 <li><a class="dropdown-item" routerLink="/adminGestion">Gestionar </a> </li>
             </ul>
           </li>
-         <li>  <a class="dropdown-item" routerLink="/lista-recursos">Listar recursos</a></li> 
-         <li>  <a class="dropdown-item" routerLink="/reasignacion">Reasignar</a> </li> 
-        <li>  <a class="dropdown-item" routerLink="/responsable">Responsable</a></li> 
-      
-        </ul>
+          <a class="dropdown-item" routerLink="/lista-recursos">Listar recursos</a>
+          <a class="dropdown-item" routerLink="/reasignacion">Reasignar</a>
+          <a class="dropdown-item" routerLink="/recursos-controlcalidad">Ver lista de Chequeo por Recurso</a>
+          <!--<a class="dropdown-item" routerLink="/responsable">Responsable</a>-->
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#"></a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Proyectos</a>

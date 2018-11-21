@@ -19,14 +19,16 @@ import { CoreModule } from './core/core.module';
 import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.component';
 import { ReasignacionComponent } from './reasignacion/reasignacion.component';
 import { ReasignacionService} from './reasignacion/reasignacion.services';
-// import { FasesService} from "./fases/fases.service";
-// import { RecursosServicio} from "./recursos/recursos.service";
 import { ResponsableComponent } from './responsable/responsable.component';
 import { ResponsableService} from './responsable/responsable.services';
 import { SelectListComponent } from './select-list/select-list.component';
 import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AdmingestionComponent } from './admingestion/admingestion.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { RecursoControlcalidadComponent } from './recurso-controlcalidad/recurso-controlcalidad.component';
+import { Recursos_controlcalidadServicio } from './recurso-controlcalidad/recurso-controlcalidad.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import { AdmingestionComponent } from './admingestion/admingestion.component';
     ResponsableComponent,
     ListaRecursosComponent,
     SelectListComponent,
-    AdmingestionComponent
+    AdmingestionComponent,
+    RecursoControlcalidadComponent
   ],
   exports: [RecursosComponent],
   imports: [
@@ -53,10 +56,11 @@ import { AdmingestionComponent } from './admingestion/admingestion.component';
     ReactiveFormsModule,
     CoreModule.forRoot(),
     AccordionModule.forRoot(),
+    CollapseModule.forRoot(),
     AngularFontAwesomeModule,
     NgbModule
   ],
-  providers: [ReasignacionService, ResponsableService],
+  providers: [ReasignacionService, ResponsableService, Recursos_controlcalidadServicio],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

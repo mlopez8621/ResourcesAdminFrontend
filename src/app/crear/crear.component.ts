@@ -56,6 +56,7 @@ export class CrearComponent implements OnInit {
     );
        this._crearService.add( this.CrearData).subscribe(
          respon => {
+           this.crearform.reset();
           console.log(respon); // validar la respuesta
          this.crearform.reset();
           swal(
