@@ -7,7 +7,7 @@ export interface IRecursoIntermedio {
   estado: number;
   nombre_estado: string;
   responsable: number;
-  nombre_responsable : string;
+  nombre_responsable: string;
   recursoPrincipal: number;
   nombre_recursoPrincipal: string;
 }

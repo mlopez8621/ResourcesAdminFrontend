@@ -1,21 +1,21 @@
 <br/>
      <label class="control-label col-sm-4" for="reasignacionName">Reasignacion</label>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id Solicitud</th>
-      <th scope="col">Recurso</th>
-      <th scope="col">Responsable</th>
-      <th scope="col">Nuevo Responsable</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let rasig of reasignacion">
-      <th scope="row">{{rasig.id}}</th>
-      <td>{{rasig.rescursos}}. {{rasig.rescursosName}}</td>
-      <td>{{rasig.responsable}}. {{rasig.responsableName}}</td>
-      <td><app-select-list (Responsable)="showResponsable($event,rasig)"></app-select-list></td>
-      <td> <button (click)="reasignar(rasig)">Cambiar</button></td>
-    </tr>
-  </tbody>
-</table>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id Solicitud</th>
+            <th scope="col">Recurso</th>
+            <th scope="col">Responsable</th>
+            <th scope="col">Nuevo Responsable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rasig of reasignacion">
+            <th scope="row">{{rasig.id}}</th>
+            <td>{{rasig.rescursos}}. {{rasig.rescursosName}}</td>
+            <td>{{rasig.responsable}}. {{rasig.responsableName}}</td>
+            <td><app-select-list (Responsable)="showResponsable($event,rasig)"></app-select-list></td>
+            <td> <button (click)="reasignar(rasig)">Cambiar</button></td>
+          </tr>
+        </tbody>
+      </table>

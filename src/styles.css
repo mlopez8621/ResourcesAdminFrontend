@@ -151,3 +151,25 @@
  .backside .card{
      margin-bottom: 0px !important;
  }
+
+ .auditoriaIcons{
+    font-size: 2em;
+     color: dodgerblue; 
+     margin-left: 20px;
+     cursor: pointer; 
+ }
+
+ 
+ .auditoriaIconsSave{
+    font-size: 2em;
+     color: darkgreen; 
+     margin-left: 20px;
+     cursor: pointer; 
+ }
+
+ .auditoriaIconsClose {
+    font-size: 2em;
+    color:crimson; 
+    margin-left: 20px;
+    cursor: pointer; 
+ }

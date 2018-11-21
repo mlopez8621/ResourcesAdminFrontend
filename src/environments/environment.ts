@@ -4,10 +4,15 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
+  //  url: 'http://127.0.0.1:8000/'
+=======
    url: 'http://127.0.0.1:8000/'
   //url: 'https://resources-admin-conectate.herokuapp.com/'
 
+>>>>>>> ea61bb5d4090cfb9678d290a4884680a1fd50488
 
+url: 'https://resources-admin-conectate.herokuapp.com/'
 };
 
 /*

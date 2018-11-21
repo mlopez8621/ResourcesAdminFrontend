@@ -1,0 +1,71 @@
+
+<div class="row">
+
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th   scope="col" >Auditor</th>
+        <th   scope="col" ></th>
+        <th scope="col">Detalle</th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr  *ngFor="let item  of recursos">
+         <td > {{item.nombre}} </td>
+         <td> {{item.descripcion}} </td>
+         <td  *ngIf="!item.auditor || item.enModificacion">
+           <app-select-list (Responsable)="Asignar($event ,item )"></app-select-list>
+
+        </td>
+        <td *ngIf="!item.auditor || item.enModificacion"> 
+            <fa  class="auditoriaIconsSave" [name]="'save'" (click)="saveAsignado(item)" ></fa>
+            <fa   class="auditoriaIconsClose" *ngIf="item.enModificacion" [name]="'close'" (click)="close(item)" ></fa>
+        </td>
+         <td   *ngIf="item.auditor &&  !item.enModificacion">
+            {{item.auditor.usuario}}
+          </td>         
+          <td  *ngIf="item.auditor &&  !item.enModificacion">
+              <fa   class="auditoriaIcons" [name]="'edit'" (click)="showEdict(item)" ></fa>
+          </td>
+          
+         <td>  <button type="button" class="btn btn-primary" (click)="openModal(item);">ver mas</button> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<ng-template #contentModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"> Detalle</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Descripcion Solicitud</h5>
+            <p class="card-text">{{detalle.descripcionSolicitud}} </p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <p class="d-inline">  <strong>  Recurso :  </strong> {{detalle.tipoRecurso}} </p> </li>
+            <li class="list-group-item"><p class="d-inline">  <strong> id Proyecto  :   </strong> {{detalle.idProyecto}} </p></li>
+            <li class="list-group-item"><p class="d-inline">  <strong>  id Solicitud  :   </strong>{{detalle.idSolicitud}} </p></li>
+            <li class="list-group-item"><p class="d-inline">   <strong>  Estado   :    </strong> {{detalle.estado}} </p></li>
+
+          </ul>
+          <div class="card-body" >
+              <h5 class="card-title">  {{ detalle.Responsable.length >1 ? 'Responsables':'Responsable'}}</h5>
+              <ul class="list-group list-group-flush" *ngFor="let Responsable  of detalle.Responsable"  >
+                  <li class="list-group-item"> <p class="d-inline">  <strong>  nombre :  </strong> {{Responsable.responsable.nombres }} {{Responsable.responsable.apellidos }}</p> </li>
+                </ul>
+          </div>
+        </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">CERRAR</button>
+  </div>
+</ng-template>

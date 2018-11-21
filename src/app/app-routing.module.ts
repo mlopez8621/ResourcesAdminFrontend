@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { CrearComponent } from './crear/crear.component';
 import { GestioncalidadComponent } from './gestioncalidad/gestioncalidad.component';
 import { ListaRecursosComponent } from './lista-recursos/lista-recursos.component';
+import { AdmingestionComponent } from './admingestion/admingestion.component';
 import { RecursoControlcalidadComponent } from './recurso-controlcalidad/recurso-controlcalidad.component';
 
 
@@ -18,8 +19,9 @@ const appRoutes: Routes = [
     { path: 'reasignacion', component: ReasignacionComponent},
     { path: 'responsable', component: ResponsableComponent},
     { path: 'lista-recursos', component: ListaRecursosComponent},
+    { path: 'adminGestion', component: AdmingestionComponent},
     { path: 'recursos-controlcalidad', component: RecursoControlcalidadComponent},
-    { path:'**', component:LandingComponent}
+    { path: '**', component: LandingComponent}
 ];
 
 
