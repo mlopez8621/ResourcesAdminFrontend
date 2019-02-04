@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-   url: 'http://127.0.0.1:8080/'
+  // url: 'http://127.0.0.1:8080/'
   //url: 'https://resources-admin-conectate.herokuapp.com/'
+  url: 'http://172.24.42.69:8080/'
 };
 
 /*
